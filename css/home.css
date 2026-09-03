@@ -1,1 +1,579 @@
+/* HERO */
 
+.hero {
+
+    min-height: calc(100vh - 79px);
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 80px 0;
+
+}
+
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.3fr)
+        minmax(320px, 0.7fr);
+
+    gap: clamp(50px, 8vw, 130px);
+
+    align-items: center;
+
+}
+
+
+.hero-content h1 {
+
+    color: var(--charcoal-blue);
+
+    max-width: 1000px;
+
+}
+
+
+.hero-description {
+
+    font-size:
+        clamp(
+            1rem,
+            1.4vw,
+            1.3rem
+        );
+
+    color: var(--muted);
+
+    margin-top: 34px;
+
+    max-width: 650px;
+
+}
+
+
+.hero-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 42px;
+
+}
+
+
+
+/* HERO VISUAL */
+
+.hero-visual {
+
+    min-height: 520px;
+
+}
+
+
+.hero-placeholder {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 520px;
+
+    background: var(--charcoal-blue);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--slate);
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.hero-placeholder::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    background: var(--berry);
+
+    right: -60px;
+
+    bottom: -70px;
+
+    filter: blur(60px);
+
+    opacity: 0.7;
+
+}
+
+
+.hero-placeholder span {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+
+/* CAPABILITIES */
+
+.capabilities {
+
+    background: var(--charcoal-blue);
+
+    color: var(--white);
+
+}
+
+
+.capability-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.2);
+
+}
+
+
+.capability {
+
+    min-height: 310px;
+
+    padding:
+        32px
+        28px
+        40px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.2);
+
+}
+
+
+.capability:last-child {
+
+    border-right: none;
+
+}
+
+
+.capability-number {
+
+    color: var(--slate);
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.capability h3 {
+
+    margin-top: 60px;
+
+    color: var(--white);
+
+}
+
+
+.capability p {
+
+    margin-top: 22px;
+
+    color: var(--slate);
+
+}
+
+
+
+/* SELECTED WORK */
+
+.selected-work {
+
+    background: var(--off-white);
+
+}
+
+
+.section-header-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    align-items: flex-end;
+
+}
+
+
+.text-link {
+
+    white-space: nowrap;
+
+    color: var(--berry);
+
+    font-weight: 700;
+
+}
+
+
+.project-list {
+
+    border-top:
+        1px solid
+        var(--slate);
+
+}
+
+
+.project-row {
+
+    display: grid;
+
+    grid-template-columns:
+        90px
+        1fr
+        60px;
+
+    align-items: center;
+
+    min-height: 160px;
+
+    border-bottom:
+        1px solid
+        var(--slate);
+
+    transition:
+        background 0.25s ease,
+        padding 0.25s ease;
+
+}
+
+
+.project-row:hover {
+
+    background: var(--slate);
+
+    padding-left: 18px;
+
+    padding-right: 18px;
+
+}
+
+
+.project-number {
+
+    font-size: 0.75rem;
+
+    color: var(--muted);
+
+}
+
+
+.project-info h3 {
+
+    color: var(--charcoal-blue);
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            3rem
+        );
+
+}
+
+
+.project-info p {
+
+    margin-top: 12px;
+
+    color: var(--muted);
+
+}
+
+
+.project-arrow {
+
+    font-size: 1.5rem;
+
+    text-align: right;
+
+}
+
+
+
+/* PROCESS */
+
+.process {
+
+    background: var(--pine-teal);
+
+    color: var(--white);
+
+}
+
+
+.process-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.25);
+
+}
+
+
+.process-grid div {
+
+    min-height: 200px;
+
+    padding: 30px 20px;
+
+    border-right:
+        1px solid
+        rgba(255,255,255,0.25);
+
+}
+
+
+.process-grid div:last-child {
+
+    border-right: none;
+
+}
+
+
+.process-grid span {
+
+    color: var(--slate);
+
+    font-size: 0.7rem;
+
+}
+
+
+.process-grid h3 {
+
+    margin-top: 80px;
+
+}
+
+
+
+/* CONTACT CTA */
+
+.contact-cta {
+
+    background: var(--berry);
+
+    color: var(--white);
+
+    padding:
+        clamp(
+            100px,
+            13vw,
+            190px
+        )
+        0;
+
+}
+
+
+.contact-cta h2 {
+
+    max-width: 900px;
+
+}
+
+
+.contact-cta .button {
+
+    margin-top: 50px;
+
+}
+
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero-visual {
+
+        min-height: 420px;
+
+    }
+
+
+    .hero-placeholder {
+
+        min-height: 420px;
+
+    }
+
+
+    .capability-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .capability:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .hero {
+
+        min-height: auto;
+
+        padding: 70px 0;
+
+    }
+
+
+    .hero-visual {
+
+        min-height: 340px;
+
+    }
+
+
+    .hero-placeholder {
+
+        min-height: 340px;
+
+    }
+
+
+    .capability-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .capability {
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.2);
+
+    }
+
+
+    .section-header-row {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .project-row {
+
+        grid-template-columns:
+            45px
+            1fr
+            30px;
+
+        min-height: 140px;
+
+    }
+
+
+    .process-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .process-grid div {
+
+        min-height: 130px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(255,255,255,0.25);
+
+    }
+
+
+    .process-grid h3 {
+
+        margin-top: 40px;
+
+    }
+
+}
