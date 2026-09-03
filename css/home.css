@@ -730,3 +730,118 @@
             3.8rem
         );
 }
+/* ABOUT PREVIEW */
+
+.about-preview {
+    background: var(--slate);
+    color: var(--black);
+}
+
+.about-preview-grid {
+    display: grid;
+
+    grid-template-columns:
+        160px
+        minmax(0, 1fr)
+        minmax(300px, 0.65fr);
+
+    gap: clamp(35px, 6vw, 90px);
+
+    align-items: start;
+}
+
+.about-preview-label {
+    padding-top: 8px;
+}
+
+.about-preview-content h2 {
+    max-width: 850px;
+
+    color: var(--charcoal-blue);
+}
+
+.about-preview-text {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 40px;
+
+    margin-top: 50px;
+}
+
+.about-preview-text p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+}
+
+.about-preview-actions {
+    margin-top: 42px;
+}
+
+.about-photo-placeholder {
+    min-height: 520px;
+
+    background: var(--berry);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: var(--white);
+}
+
+.about-photo-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    background: var(--charcoal-blue);
+
+    right: -80px;
+    bottom: -70px;
+
+    filter: blur(65px);
+
+    opacity: 0.65;
+}
+
+.about-photo-placeholder span {
+    position: relative;
+    z-index: 2;
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+.button-dark {
+    background: var(--black);
+
+    border-color: var(--black);
+
+    color: var(--white);
+}
+
+.button-dark:hover {
+    background: var(--berry);
+
+    border-color: var(--berry);
+}
