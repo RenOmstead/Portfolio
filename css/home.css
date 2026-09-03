@@ -72,73 +72,155 @@
 /* HERO VISUAL */
 
 .hero-visual {
-
-    min-height: 520px;
-
+    min-height: 560px;
 }
 
-
-.hero-placeholder {
-
+.hero-art {
+    position: relative;
     width: 100%;
-
-    height: 100%;
-
-    min-height: 520px;
-
-    background: var(--charcoal-blue);
+    min-height: 560px;
 
     display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    color: var(--slate);
-
-    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
 
     overflow: hidden;
 
+    background: var(--charcoal-blue);
+    color: var(--white);
+
+    padding: 34px;
 }
 
-
-.hero-placeholder::before {
-
+.hero-art::before {
     content: "";
 
     position: absolute;
+    inset: 18px;
 
-    width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
-    height: 280px;
+    pointer-events: none;
+}
+
+.hero-art-label {
+    position: relative;
+    z-index: 3;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: var(--slate);
+}
+
+.hero-art-main {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: auto;
+    margin-bottom: 70px;
+}
+
+.hero-art-small {
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 8px;
+
+    color: var(--slate);
+}
+
+.hero-art-big {
+    font-size: clamp(4rem, 7vw, 7rem);
+
+    font-weight: 900;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.06em;
+}
+
+.hero-art-outline {
+    font-size: clamp(2.8rem, 5vw, 5rem);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
+
+    margin-left: 34px;
+}
+
+.hero-art-footer {
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.hero-art-footer span {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    padding: 7px 10px;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+/* GLOW */
+
+.hero-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(75px);
+
+    opacity: 0.85;
+
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    width: 320px;
+    height: 320px;
 
     background: var(--berry);
 
-    right: -60px;
-
-    bottom: -70px;
-
-    filter: blur(60px);
-
-    opacity: 0.7;
-
+    right: -80px;
+    top: 100px;
 }
 
+.hero-glow-two {
+    width: 210px;
+    height: 210px;
 
-.hero-placeholder span {
+    background: var(--pine-teal);
 
-    position: relative;
+    left: -50px;
+    bottom: -40px;
 
-    z-index: 2;
-
-    font-size: 0.7rem;
-
-    letter-spacing: 0.12em;
-
+    opacity: 0.6;
 }
-
-
 
 /* CAPABILITIES */
 
