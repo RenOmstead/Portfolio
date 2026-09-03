@@ -95,78 +95,91 @@ textarea {
 
 /* TYPOGRAPHY */
 
+/* TYPOGRAPHY */
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
 h1,
 h2,
 h3 {
-
-    line-height: 0.98;
-    letter-spacing: -0.045em;
-
+    line-height: 0.92;
+    letter-spacing: -0.05em;
 }
-
 
 h1 {
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
 
     font-size:
         clamp(
-            3.3rem,
-            7vw,
-            7.5rem
+            4rem,
+            8vw,
+            8.5rem
         );
 
-    font-weight: 800;
+    font-weight: 900;
 
+    text-transform: uppercase;
 }
-
 
 h2 {
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
 
     font-size:
         clamp(
-            2.4rem,
-            5vw,
-            5rem
+            3rem,
+            6vw,
+            6rem
         );
 
-    font-weight: 800;
+    font-weight: 900;
 
+    text-transform: uppercase;
 }
 
-
 h3 {
-
     font-size:
         clamp(
             1.4rem,
-            2vw,
-            2rem
+            2.2vw,
+            2.2rem
         );
 
+    font-weight: 800;
 }
-
 
 p {
-
     max-width: 70ch;
-
 }
 
-
 .eyebrow {
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
 
     font-size: 0.72rem;
 
     font-weight: 700;
 
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
 
     text-transform: uppercase;
 
     margin-bottom: 24px;
-
 }
-
-
 
 /* BUTTONS */
 
