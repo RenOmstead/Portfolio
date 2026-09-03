@@ -1,1 +1,193 @@
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
 
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.contact-hero {
+    padding: clamp(100px, 12vw, 180px) 0;
+}
+
+.contact-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    gap: clamp(50px, 8vw, 120px);
+    align-items: end;
+}
+
+.contact-hero h1 {
+    max-width: 1000px;
+    color: var(--charcoal-blue);
+}
+
+.contact-hero-copy p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.contact-hero-copy p:first-child {
+    color: var(--black);
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    font-weight: 700;
+}
+
+.contact-hero-copy p + p {
+    margin-top: 24px;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+.contact-section {
+    background: var(--charcoal-blue);
+    color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(60px, 10vw, 150px);
+}
+
+
+/* Details */
+
+.contact-detail-list {
+    margin-top: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.contact-detail {
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.contact-detail > span {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--slate);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.contact-detail a,
+.contact-detail p {
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.contact-detail a:hover {
+    color: var(--slate);
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.contact-form {
+    display: grid;
+    gap: 28px;
+}
+
+.form-group {
+    display: grid;
+    gap: 10px;
+}
+
+.form-group label {
+    color: var(--slate);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 16px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+    border-radius: 0;
+    outline: none;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--white);
+}
+
+.contact-form .button {
+    justify-self: start;
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.contact-bottom {
+    padding: clamp(80px, 10vw, 130px) 0;
+    background: var(--slate);
+}
+
+.contact-bottom-grid {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 50px;
+}
+
+.contact-interest-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact-interest-list span {
+    padding: 10px 14px;
+    background: var(--off-white);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .contact-hero-grid,
+    .contact-grid,
+    .contact-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .contact-hero {
+        padding: 80px 0;
+    }
+}
