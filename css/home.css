@@ -333,90 +333,197 @@
 }
 
 
-.project-list {
+/* PROJECT SHOWCASE */
 
-    border-top:
-        1px solid
-        var(--slate);
-
+.project-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
 }
 
+.project-card {
+    min-height: 680px;
 
-.project-row {
+    display: flex;
+    flex-direction: column;
+
+    background: var(--white);
+
+    border: 1px solid var(--slate);
+
+    overflow: hidden;
+}
+
+.project-card-large {
+    grid-column: 1 / -1;
+
+    min-height: 720px;
 
     display: grid;
-
-    grid-template-columns:
-        90px
-        1fr
-        60px;
-
-    align-items: center;
-
-    min-height: 160px;
-
-    border-bottom:
-        1px solid
-        var(--slate);
-
-    transition:
-        background 0.25s ease,
-        padding 0.25s ease;
-
+    grid-template-columns: 0.85fr 1.15fr;
 }
 
+.project-copy {
+    padding:
+        clamp(32px, 4vw, 60px);
 
-.project-row:hover {
-
-    background: var(--slate);
-
-    padding-left: 18px;
-
-    padding-right: 18px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+.project-meta {
+    width: 100%;
 
-.project-number {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
 
-    font-size: 0.75rem;
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.66rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
 
     color: var(--muted);
 
+    text-transform: uppercase;
 }
 
+.project-copy h3 {
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
 
-.project-info h3 {
-
-    color: var(--charcoal-blue);
+    text-transform: uppercase;
 
     font-size:
         clamp(
-            1.7rem,
-            3vw,
-            3rem
+            2.8rem,
+            5vw,
+            5.7rem
         );
 
+    line-height: 0.9;
+
+    margin-top: 70px;
+
+    color: var(--charcoal-blue);
 }
 
+.project-copy p {
+    margin-top: 28px;
 
-.project-info p {
+    font-size: 1rem;
 
-    margin-top: 12px;
+    line-height: 1.65;
 
     color: var(--muted);
 
+    max-width: 520px;
+}
+
+.project-link {
+    margin-top: auto;
+    padding-top: 45px;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: var(--berry);
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
 
 
-.project-arrow {
+/* PROJECT VISUAL AREAS */
 
-    font-size: 1.5rem;
+.project-visual {
+    min-height: 320px;
 
-    text-align: right;
+    padding: 38px;
 
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 }
 
+.project-visual-crm {
+    background: var(--charcoal-blue);
+}
+
+.project-visual-apta {
+    background: var(--berry);
+}
+
+.project-visual-seo {
+    background: var(--pine-teal);
+}
+
+.project-visual-research {
+    background: var(--walnut);
+}
+
+
+/* FAKE SCREENSHOT FOR NOW */
+
+.project-screen {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--off-white);
+
+    border: 1px solid rgba(0,0,0,0.15);
+
+    box-shadow:
+        0 22px 55px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover .project-screen {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.24);
+}
+
+.project-screen span {
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    color: var(--muted);
+}
 
 
 /* PROCESS */
