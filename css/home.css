@@ -626,34 +626,44 @@
 
 @media (max-width: 1000px) {
 
-    .hero-visual,
-    .hero-art {
-        min-height: 440px;
+    .about-preview-grid {
+        grid-template-columns:
+            120px
+            1fr;
+    }
+
+    .about-preview-visual {
+        grid-column: 2;
+    }
+
+    .about-photo-placeholder {
+        min-height: 420px;
     }
 
 }
 
-@media (max-width: 650px) {
 
-    .hero-visual,
-    .hero-art {
-        min-height: 390px;
+@media (max-width: 700px) {
+
+    .about-preview-grid {
+        grid-template-columns: 1fr;
     }
 
-    .hero-art {
-        padding: 26px;
+    .about-preview-label,
+    .about-preview-visual {
+        grid-column: auto;
     }
 
-    .hero-art::before {
-        inset: 12px;
+    .about-preview-text {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
     }
 
-    .hero-art-main {
-        margin-bottom: 45px;
-    }
+    .about-photo-placeholder {
+        min-height: 340px;
 
-    .hero-art-outline {
-        margin-left: 16px;
+        margin-top: 10px;
     }
 
 }
@@ -663,73 +673,48 @@
 
 @media (max-width: 1000px) {
 
-    .hero-visual,
-    .hero-art {
-        min-height: 440px;
+    .about-preview-grid {
+        grid-template-columns:
+            120px
+            1fr;
+    }
+
+    .about-preview-visual {
+        grid-column: 2;
+    }
+
+    .about-photo-placeholder {
+        min-height: 420px;
     }
 
 }
 
-@media (max-width: 650px) {
 
-    .hero-visual,
-    .hero-art {
-        min-height: 390px;
+@media (max-width: 700px) {
+
+    .about-preview-grid {
+        grid-template-columns: 1fr;
     }
 
-    .hero-art {
-        padding: 26px;
+    .about-preview-label,
+    .about-preview-visual {
+        grid-column: auto;
     }
 
-    .hero-art::before {
-        inset: 12px;
+    .about-preview-text {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
     }
 
-    .hero-art-main {
-        margin-bottom: 45px;
-    }
+    .about-photo-placeholder {
+        min-height: 340px;
 
-    .hero-art-outline {
-        margin-left: 16px;
+        margin-top: 10px;
     }
 
 }
-.hero-eyebrow {
-    color: var(--berry);
-}
-.hero-content h1 {
-    max-width: 980px;
-}
 
-.hero-description {
-    font-size:
-        clamp(
-            1rem,
-            1.5vw,
-            1.35rem
-        );
-
-    line-height: 1.55;
-}
-
-.project-info h3 {
-    font-family:
-        Impact,
-        Haettenschweiler,
-        "Arial Narrow Bold",
-        sans-serif;
-
-    text-transform: uppercase;
-
-    letter-spacing: -0.035em;
-
-    font-size:
-        clamp(
-            2rem,
-            3.5vw,
-            3.8rem
-        );
-}
 /* ABOUT PREVIEW */
 
 .about-preview {
