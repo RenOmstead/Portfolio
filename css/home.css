@@ -519,143 +519,71 @@
 
 @media (max-width: 1000px) {
 
-    .hero-grid {
-
-        grid-template-columns: 1fr;
-
+    .hero-visual,
+    .hero-art {
+        min-height: 440px;
     }
 
+}
 
-    .hero-visual {
+@media (max-width: 650px) {
 
-        min-height: 420px;
-
+    .hero-visual,
+    .hero-art {
+        min-height: 390px;
     }
 
-
-    .hero-placeholder {
-
-        min-height: 420px;
-
+    .hero-art {
+        padding: 26px;
     }
 
-
-    .capability-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .hero-art::before {
+        inset: 12px;
     }
 
-
-    .capability:nth-child(2) {
-
-        border-right: none;
-
+    .hero-art-main {
+        margin-bottom: 45px;
     }
 
-
-    .process-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    .hero-art-outline {
+        margin-left: 16px;
     }
 
 }
 
 
-
 /* MOBILE */
+
+@media (max-width: 1000px) {
+
+    .hero-visual,
+    .hero-art {
+        min-height: 440px;
+    }
+
+}
 
 @media (max-width: 650px) {
 
-    .hero {
-
-        min-height: auto;
-
-        padding: 70px 0;
-
+    .hero-visual,
+    .hero-art {
+        min-height: 390px;
     }
 
-
-    .hero-visual {
-
-        min-height: 340px;
-
+    .hero-art {
+        padding: 26px;
     }
 
-
-    .hero-placeholder {
-
-        min-height: 340px;
-
+    .hero-art::before {
+        inset: 12px;
     }
 
-
-    .capability-grid {
-
-        grid-template-columns: 1fr;
-
+    .hero-art-main {
+        margin-bottom: 45px;
     }
 
-
-    .capability {
-
-        border-right: none;
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.2);
-
-    }
-
-
-    .section-header-row {
-
-        align-items: flex-start;
-
-        flex-direction: column;
-
-    }
-
-
-    .project-row {
-
-        grid-template-columns:
-            45px
-            1fr
-            30px;
-
-        min-height: 140px;
-
-    }
-
-
-    .process-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .process-grid div {
-
-        min-height: 130px;
-
-        border-right: none;
-
-        border-bottom:
-            1px solid
-            rgba(255,255,255,0.25);
-
-    }
-
-
-    .process-grid h3 {
-
-        margin-top: 40px;
-
+    .hero-art-outline {
+        margin-left: 16px;
     }
 
 }
