@@ -1,1 +1,261 @@
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
 
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+    padding: clamp(100px, 12vw, 180px) 0;
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+    gap: clamp(50px, 8vw, 120px);
+    align-items: end;
+}
+
+.about-hero h1 {
+    max-width: 1100px;
+    color: var(--charcoal-blue);
+}
+
+.about-hero-side {
+    padding-bottom: 10px;
+}
+
+.about-hero-side p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.about-hero-side p + p {
+    margin-top: 24px;
+}
+
+.about-intro {
+    color: var(--black) !important;
+    font-size: clamp(1.15rem, 1.6vw, 1.4rem) !important;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.about-story {
+    background: var(--charcoal-blue);
+    color: var(--white);
+}
+
+.about-story-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(50px, 8vw, 120px);
+    align-items: start;
+}
+
+.about-photo {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--berry);
+    color: var(--white);
+}
+
+.about-photo span {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.about-story-copy h2 {
+    max-width: 800px;
+    color: var(--white);
+}
+
+.about-copy-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 45px;
+    margin-top: 60px;
+}
+
+.about-copy-columns p {
+    color: var(--slate);
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   STRENGTHS
+   ========================================================= */
+
+.about-strengths {
+    background: var(--off-white);
+}
+
+.strength-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--slate);
+}
+
+.strength-card {
+    min-height: 360px;
+    padding: 38px 38px 50px;
+    border-bottom: 1px solid var(--slate);
+}
+
+.strength-card:nth-child(odd) {
+    border-right: 1px solid var(--slate);
+}
+
+.strength-card > span {
+    color: var(--berry);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.strength-card h3 {
+    max-width: 480px;
+    margin-top: 55px;
+    color: var(--charcoal-blue);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1;
+}
+
+.strength-card p {
+    max-width: 500px;
+    margin-top: 24px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CURRENT FOCUS
+   ========================================================= */
+
+.current-focus {
+    background: var(--pine-teal);
+    color: var(--white);
+}
+
+.current-focus-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(350px, 1.1fr);
+    gap: clamp(60px, 10vw, 150px);
+}
+
+.current-focus h2 {
+    max-width: 720px;
+}
+
+.focus-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.focus-list div {
+    min-height: 95px;
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.focus-list span {
+    color: var(--slate);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.7rem;
+}
+
+.focus-list p {
+    font-size: clamp(1.15rem, 2vw, 1.7rem);
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.about-cta {
+    padding: clamp(100px, 13vw, 180px) 0;
+    background: var(--berry);
+    color: var(--white);
+}
+
+.about-cta h2 {
+    max-width: 850px;
+}
+
+.about-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+    .about-hero-grid,
+    .about-story-grid,
+    .current-focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-side {
+        max-width: 700px;
+    }
+
+    .about-photo {
+        min-height: 500px;
+    }
+
+    .about-copy-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+    .strength-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strength-card:nth-child(odd) {
+        border-right: none;
+    }
+
+    .strength-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 650px) {
+    .about-hero {
+        padding: 80px 0;
+    }
+
+    .about-photo {
+        min-height: 380px;
+    }
+
+    .focus-list div {
+        grid-template-columns: 45px 1fr;
+    }
+}
