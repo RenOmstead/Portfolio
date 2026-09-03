@@ -830,3 +830,143 @@
 
     border-color: var(--berry);
 }
+/* SKILLS */
+
+.skills-section {
+    background: var(--off-white);
+}
+
+.skills-header {
+    display: grid;
+
+    grid-template-columns:
+        180px
+        minmax(0, 800px);
+
+    gap: 40px;
+
+    align-items: start;
+}
+
+.skills-header .eyebrow {
+    margin-top: 8px;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    border-top:
+        1px solid
+        var(--slate);
+}
+
+.skills-group {
+    min-height: 380px;
+
+    padding:
+        34px
+        36px
+        50px;
+
+    border-bottom:
+        1px solid
+        var(--slate);
+}
+
+.skills-group:nth-child(odd) {
+    border-right:
+        1px solid
+        var(--slate);
+}
+
+.skills-number {
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    color: var(--berry);
+}
+
+.skills-group h3 {
+    margin-top: 44px;
+
+    color: var(--charcoal-blue);
+
+    font-family:
+        Impact,
+        Haettenschweiler,
+        "Arial Narrow Bold",
+        sans-serif;
+
+    font-size:
+        clamp(
+            2.2rem,
+            4vw,
+            4rem
+        );
+
+    text-transform: uppercase;
+
+    letter-spacing: -0.04em;
+}
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 32px;
+}
+
+.skill-tags span {
+    padding:
+        8px
+        11px;
+
+    border:
+        1px solid
+        var(--slate);
+
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    background: var(--white);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.skill-tags span:hover {
+    background: var(--charcoal-blue);
+
+    color: var(--white);
+
+    border-color: var(--charcoal-blue);
+
+    transform: translateY(-2px);
+}
