@@ -140,6 +140,17 @@
     margin-top: 12px;
 }
 
+.contact-form-status {
+    color: var(--slate);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.contact-form-status a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
 
 /* =========================================================
    BOTTOM
