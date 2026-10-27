@@ -201,6 +201,12 @@
     background: var(--off-white);
 }
 
+/* Light sections that follow one another get a dividing line. */
+.resume-section + .resume-projects,
+.resume-projects + .resume-section {
+    border-top: 1px solid var(--slate);
+}
+
 .resume-project-list {
     border-top: 1px solid var(--slate);
 }
