@@ -70,12 +70,12 @@
     color: var(--white);
 }
 
-/* Fill the frame; trim from the left so the face stays in view. */
+/* Fill the frame, trimming the sides evenly. */
 .about-page-photo {
     display: block;
     width: 100%;
     object-fit: cover;
-    object-position: right center;
+    object-position: center;
 }
 
 .about-photo span {
