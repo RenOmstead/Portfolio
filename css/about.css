@@ -63,11 +63,19 @@
 .about-photo {
     min-height: 650px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     overflow: hidden;
     background: var(--berry);
     color: var(--white);
+}
+
+/* Fill the frame; trim from the left so the face stays in view. */
+.about-page-photo {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: right center;
 }
 
 .about-photo span {
