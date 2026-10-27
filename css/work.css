@@ -246,8 +246,12 @@
     background: var(--charcoal-blue);
 }
 
+.visual-salem {
+    background: var(--berry);
+}
 
-/* Walkthrough videos and screenshots */
+
+/* Walkthrough videos */
 
 .work-media {
     width: 100%;
@@ -259,8 +263,7 @@
     transform: translateY(-8px);
 }
 
-.work-video,
-.work-image {
+.work-video {
     display: block;
     width: 100%;
     height: auto;

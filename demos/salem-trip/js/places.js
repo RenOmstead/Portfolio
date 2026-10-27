@@ -1,0 +1,246 @@
+// Hand-picked places for the trip: Salem, Rockport and Gloucester.
+// Hours are typical for late October / early November. They can change, so
+// check before you go. Every value can be edited in the app.
+// `oh` (OpenStreetMap opening_hours format) is used when hours depend on the
+// day of the week; otherwise `open`/`close` apply every day.
+// `mins` is a suggested visit length. `open`/`close` are "HH:MM", or null for
+// places that are always open (statues, parks, streets). `daylight` places are
+// best before dark, so the planner treats them as closing soon after sunset.
+
+import { LORE } from './lore.js';
+
+export const CATEGORIES = {
+  lore:     { label: 'Lore & mysteries',      color: '#8f2a22', icon: 'skull' },
+  witch:    { label: 'Witch trials & history', color: '#7b3fb8', icon: 'scroll-text' },
+  museum:   { label: 'Museums & sights',      color: '#b4561c', icon: 'landmark' },
+  outdoors: { label: 'Waterfront & outdoors', color: '#2e7d5b', icon: 'waves' },
+  food:     { label: 'Food & drink',          color: '#c23b5a', icon: 'utensils' },
+  shop:     { label: 'Shops',                 color: '#8a6d1f', icon: 'shopping-bag' },
+  parking:  { label: 'Parking',               color: '#1f5fa8', icon: 'circle-parking' },
+  transit:  { label: 'Train & ferry',         color: '#4a5568', icon: 'train-front' },
+  tour:     { label: 'Tours & boats',         color: '#0f8a9c', icon: 'ship' },
+  custom:   { label: 'My places',             color: '#d9480f', icon: 'map-pin' },
+};
+
+export const PLACES = [
+  // Witch trials & spooky
+  { id: 'witch-museum', name: 'Salem Witch Museum', cat: 'witch', lat: 42.52374, lng: -70.89116,
+    addr: '19 1/2 Washington Square N, Salem, MA', mins: 50, open: '10:00', close: '17:00',
+    tip: 'Shows run about every 30 min. Buy timed tickets online ahead.', tickets: true },
+  { id: 'witch-house', name: 'The Witch House (Corwin House)', cat: 'witch', lat: 42.52139, lng: -70.89889,
+    addr: '310 Essex St, Salem, MA', mins: 40, open: '10:00', close: '17:00',
+    tip: 'The only building still standing with direct ties to the 1692 trials.' },
+  { id: 'trials-memorial', name: 'Salem Witch Trials Memorial', cat: 'witch', lat: 42.52080, lng: -70.89195,
+    addr: '24 Liberty St, Salem, MA', mins: 15, open: null, close: null,
+    tip: 'Free. Next door to the Old Burying Point.' },
+  { id: 'burying-point', name: 'Old Burying Point (Charter St Cemetery)', cat: 'witch', lat: 42.52049, lng: -70.89235,
+    addr: '51 Charter St, Salem, MA', mins: 20, open: '10:00', close: '16:30',
+    tip: 'Usually closes at dusk.' },
+  { id: 'proctors-ledge', name: "Proctor's Ledge Memorial", cat: 'witch', lat: 42.51800, lng: -70.90760,
+    addr: '7 Pope St, Salem, MA', mins: 15, open: null, close: null, daylight: true,
+    tip: 'Where the 1692 executions took place. About a 20 min walk west of downtown.' },
+  { id: 'howard-st-cemetery', name: 'Howard Street Cemetery', cat: 'witch', lat: 42.52430, lng: -70.89210,
+    addr: '29 Howard St, Salem, MA', mins: 15, open: null, close: null,
+    tip: 'Giles Corey was pressed to death nearby.' },
+  { id: 'witch-dungeon', name: 'Witch Dungeon Museum', cat: 'witch', lat: 42.52330, lng: -70.89620,
+    addr: '16 Lynde St, Salem, MA', mins: 45, open: '10:00', close: '17:00',
+    tip: 'A live reenactment of a trial, then a walk through a replica dungeon.' },
+  { id: 'witch-history', name: 'Witch History Museum', cat: 'witch', lat: 42.52190, lng: -70.89400,
+    addr: '197 Essex St, Salem, MA', mins: 40, open: '10:00', close: '17:00' },
+  { id: 'count-orlok', name: "Count Orlok's Nightmare Gallery", cat: 'witch', lat: 42.52180, lng: -70.89470,
+    addr: '217 Essex St, Salem, MA', mins: 30, open: '11:00', close: '18:00',
+    tip: 'A gallery of horror movie monsters.' },
+  { id: 'witch-village', name: 'Salem Witch Village', cat: 'witch', lat: 42.52100, lng: -70.89100,
+    addr: '282 Derby St, Salem, MA', mins: 30, open: '10:00', close: '17:00' },
+  { id: 'satanic-temple', name: 'The Satanic Temple & Art Gallery', cat: 'witch', lat: 42.52770, lng: -70.88880,
+    addr: '64 Bridge St, Salem, MA', mins: 30, open: '10:00', close: '18:00' },
+
+  // Museums & historic
+  { id: 'pem', name: 'Peabody Essex Museum', cat: 'museum', lat: 42.52167, lng: -70.89222,
+    addr: '161 Essex St, Salem, MA', mins: 120, open: '10:00', close: '17:00', oh: 'Mo,Th-Su 10:00-17:00; Tu,We off',
+    tip: 'Large art museum. Yin Yu Tang, the Chinese house, needs a timed ticket.', tickets: true },
+  { id: 'seven-gables', name: 'The House of the Seven Gables', cat: 'museum', lat: 42.52179, lng: -70.88353,
+    addr: '115 Derby St, Salem, MA', mins: 75, open: '10:00', close: '17:00',
+    tip: 'Guided tours with advance tickets. Candlelit evening tours run in October.', tickets: true },
+  { id: 'pirate-museum', name: 'New England Pirate Museum', cat: 'museum', lat: 42.52080, lng: -70.89040,
+    addr: '274 Derby St, Salem, MA', mins: 35, open: '10:00', close: '17:00' },
+  { id: 'old-town-hall', name: 'Old Town Hall (Derby Square)', cat: 'museum', lat: 42.520884, lng: -70.89463,
+    addr: '32 Derby Square, Salem, MA', mins: 15, open: null, close: null,
+    tip: 'The Hocus Pocus dance scene was filmed here.' },
+  { id: 'ropes-mansion', name: 'Ropes Mansion & Garden', cat: 'museum', lat: 42.52150, lng: -70.90030,
+    addr: '318 Essex St, Salem, MA', mins: 20, open: null, close: null, daylight: true,
+    tip: "Allison's house in Hocus Pocus. Best seen from outside." },
+  { id: 'custom-house', name: 'Custom House (Salem Maritime NHP)', cat: 'museum', lat: 42.52140, lng: -70.88720,
+    addr: '178 Derby St, Salem, MA', mins: 30, open: '10:00', close: '17:00',
+    tip: 'National Park Service. Hours are shorter in the off-season.' },
+  { id: 'visitor-center', name: 'NPS Regional Visitor Center', cat: 'museum', lat: 42.52300, lng: -70.89300,
+    addr: '2 New Liberty St, Salem, MA', mins: 15, open: '09:00', close: '17:00',
+    tip: 'Free maps, restrooms and a short film.' },
+  { id: 'chestnut-st', name: 'Chestnut Street (McIntire District)', cat: 'museum', lat: 42.51960, lng: -70.90000,
+    addr: 'Chestnut St, Salem, MA', mins: 25, open: null, close: null, daylight: true,
+    tip: 'One of the most beautiful streets in America. Federal-style mansions.' },
+  { id: 'hawthorne-hotel', name: 'Hawthorne Hotel', cat: 'museum', lat: 42.52260, lng: -70.89090,
+    addr: '18 Washington Square W, Salem, MA', mins: 15, open: null, close: null },
+
+  // Waterfront & outdoors
+  { id: 'derby-wharf', name: 'Derby Wharf & Lighthouse', cat: 'outdoors', lat: 42.51790, lng: -70.88510,
+    addr: 'Derby Wharf, Salem, MA', mins: 35, open: null, close: null, daylight: true,
+    tip: 'Walk the half-mile wharf out to the little lighthouse. Good at sunset.' },
+  { id: 'salem-common', name: 'Salem Common', cat: 'outdoors', lat: 42.52400, lng: -70.88950,
+    addr: 'Washington Square, Salem, MA', mins: 15, open: null, close: null },
+  { id: 'bewitched-statue', name: 'Bewitched Statue (Lappin Park)', cat: 'outdoors', lat: 42.52180, lng: -70.89580,
+    addr: 'Essex St & Washington St, Salem, MA', mins: 10, open: null, close: null,
+    tip: 'Photo stop with Samantha on her broom.' },
+  { id: 'essex-mall', name: 'Essex Street Pedestrian Mall', cat: 'outdoors', lat: 42.52190, lng: -70.89500,
+    addr: 'Essex St, Salem, MA', mins: 45, open: null, close: null,
+    tip: 'The main walking street, with shops, buskers and food.' },
+  { id: 'pickering-wharf', name: 'Pickering Wharf', cat: 'outdoors', lat: 42.51950, lng: -70.88780,
+    addr: 'Pickering Wharf, Salem, MA', mins: 30, open: null, close: null, daylight: true },
+  { id: 'winter-island', name: 'Winter Island & Fort Pickering Light', cat: 'outdoors', lat: 42.52660, lng: -70.86640,
+    addr: '50 Winter Island Rd, Salem, MA', mins: 40, open: null, close: null, daylight: true,
+    tip: 'About 1.5 miles from downtown. Driving may be easier.' },
+  { id: 'salem-willows', name: 'Salem Willows Park', cat: 'outdoors', lat: 42.53540, lng: -70.87000,
+    addr: '171 Fort Ave, Salem, MA', mins: 45, open: null, close: null, daylight: true,
+    tip: 'About 2 miles from downtown, so drive or take a ride. The arcade has seasonal hours.' },
+
+  // Food & drink
+  { id: 'gulu-gulu', name: 'Gulu-Gulu Cafe', cat: 'food', lat: 42.52160, lng: -70.89620,
+    addr: '247 Essex St, Salem, MA', mins: 60, open: '09:00', close: '23:00' },
+  { id: 'flying-saucer', name: 'Flying Saucer Pizza Co.', cat: 'food', lat: 42.52070, lng: -70.89550,
+    addr: '118 Washington St, Salem, MA', mins: 60, open: '11:30', close: '21:00',
+    tip: 'Sci-fi themed pizza. Expect a wait at peak times.' },
+  { id: 'turners', name: "Turner's Seafood (Lyceum Hall)", cat: 'food', lat: 42.52260, lng: -70.89480,
+    addr: '43 Church St, Salem, MA', mins: 75, open: '11:30', close: '21:00',
+    tip: 'Seafood in Lyceum Hall. Book ahead.' },
+  { id: 'ugly-mug', name: 'Ugly Mug Diner', cat: 'food', lat: 42.521001, lng: -70.895753,
+    addr: '122 Washington St, Salem, MA', mins: 60, open: '08:00', close: '13:30',
+    tip: 'Breakfast and brunch. Sundays 8:00 AM to 1:30 PM.' },
+  { id: 'rockafellas', name: 'Rockafellas', cat: 'food', lat: 42.52190, lng: -70.89565,
+    addr: '231 Essex St, Salem, MA', mins: 75, open: '11:30', close: '23:00',
+    tip: 'In an old bank building, said to be haunted. Ask for the Vault. Reservations by phone: 978-745-2411.' },
+  { id: 'ledger', name: 'Ledger', cat: 'food', lat: 42.521083, lng: -70.89533,
+    addr: '125 Washington St, Salem, MA', mins: 85, open: '16:30', close: '20:30',
+    oh: 'We-Th 17:00-21:00; Fr-Sa 17:00-22:00; Su 16:30-20:30; Mo,Tu off',
+    tip: 'In the 1818 Salem Savings Bank. Reservations on OpenTable. Sunday dinner 4:30 to 8:30 PM.' },
+  { id: 'reds', name: "Red's Sandwich Shop", cat: 'food', lat: 42.52080, lng: -70.89350,
+    addr: '15 Central St, Salem, MA', mins: 50, open: '07:00', close: '14:00',
+    tip: 'A classic breakfast spot in an old colonial building.' },
+  { id: 'sea-level', name: 'Sea Level Oyster Bar', cat: 'food', lat: 42.51930, lng: -70.88730,
+    addr: '94 Wharf St, Salem, MA', mins: 75, open: '11:30', close: '22:00',
+    tip: 'Waterfront seafood on Pickering Wharf.' },
+  { id: 'jaho', name: 'Jaho Coffee & Tea', cat: 'food', lat: 42.52110, lng: -70.88800,
+    addr: '197 Derby St, Salem, MA', mins: 20, open: '07:00', close: '18:00' },
+  { id: 'kakawa', name: 'Kakawa Chocolate House', cat: 'food', lat: 42.52190, lng: -70.89300,
+    addr: '173 Essex St, Salem, MA', mins: 20, open: '11:00', close: '18:00',
+    tip: 'Historic-style drinking chocolate.' },
+  { id: 'pepper-co', name: 'Ye Olde Pepper Companie', cat: 'food', lat: 42.52200, lng: -70.88380,
+    addr: '122 Derby St, Salem, MA', mins: 15, open: '10:00', close: '17:00',
+    tip: "America's oldest candy company, across from the Seven Gables." },
+  { id: 'bit-bar', name: 'Bit Bar Salem', cat: 'food', lat: 42.52090, lng: -70.89080,
+    addr: '278 Derby St, Salem, MA', mins: 60, open: '12:00', close: '23:00',
+    tip: 'Retro arcade and bar. Kids are welcome in the daytime.' },
+
+  // Shops
+  { id: 'crow-haven', name: 'Crow Haven Corner', cat: 'shop', lat: 42.52230, lng: -70.88990,
+    addr: '125 Essex St, Salem, MA', mins: 20, open: '10:00', close: '18:00',
+    tip: "Salem's oldest witch shop." },
+  { id: 'hex', name: 'HEX: Old World Witchery', cat: 'shop', lat: 42.52140, lng: -70.89620,
+    addr: '246 Essex St, Salem, MA', mins: 20, open: '10:00', close: '19:00' },
+
+  // Parking
+  { id: 'museum-place-garage', name: 'Museum Place Garage', cat: 'parking', lat: 42.52360, lng: -70.89350,
+    addr: '1 New Liberty St, Salem, MA', mins: 0, open: null, close: null,
+    tip: 'City garage in the middle of downtown. Pay at the kiosk or with the Passport app.' },
+  { id: 'south-harbor-garage', name: 'South Harbor Garage', cat: 'parking', lat: 42.52000, lng: -70.88950,
+    addr: '10 Congress St, Salem, MA', mins: 0, open: null, close: null,
+    tip: 'City garage near Pickering Wharf and Derby St.' },
+  { id: 'mbta-garage', name: 'Salem Station Garage', cat: 'parking', lat: 42.52470, lng: -70.89600,
+    addr: '252 Bridge St, Salem, MA', mins: 0, open: null, close: null,
+    tip: 'MBTA garage next to the train station.' },
+
+  // Transit
+  { id: 'salem-station', name: 'Salem MBTA Station', cat: 'transit', lat: 42.52440, lng: -70.89580,
+    addr: '252 Bridge St, Salem, MA', mins: 0, open: null, close: null,
+    tip: 'Newburyport/Rockport Line to and from North Station in Boston.' },
+  { id: 'salem-ferry', name: 'Salem Ferry Terminal', cat: 'transit', lat: 42.52280, lng: -70.87860,
+    addr: '10 Blaney St, Salem, MA', mins: 0, open: null, close: null,
+    tip: 'Seasonal ferry to Boston. It usually stops running at the end of October.' },
+
+  // ---------------- Rockport ----------------
+  { id: 'motif-1', name: 'Motif No. 1', cat: 'museum', lat: 42.659257, lng: -70.614879,
+    addr: 'Bradley Wharf, Rockport, MA', mins: 15, open: null, close: null,
+    tip: 'The red fishing shack, said to be the most-painted building in America.' },
+  { id: 'bearskin-neck', name: 'Bearskin Neck', cat: 'shop', lat: 42.66000, lng: -70.61520,
+    addr: 'Bearskin Neck, Rockport, MA', mins: 60, open: '10:00', close: '17:00',
+    tip: 'A narrow lane of shops, galleries and snacks out to the breakwater. Some shops cut back hours in the off-season.' },
+  { id: 'dock-square', name: 'Dock Square', cat: 'outdoors', lat: 42.65830, lng: -70.61680,
+    addr: 'Dock Square, Rockport, MA', mins: 15, open: null, close: null },
+  { id: 'rockport-art', name: 'Rockport Art Association & Museum', cat: 'museum', lat: 42.65860, lng: -70.61770,
+    addr: '12 Main St, Rockport, MA', mins: 45, open: '10:00', close: '17:00', oh: 'Tu-Sa 10:00-17:00; Su 12:00-17:00; Mo off' },
+  { id: 'shalin-liu', name: 'Shalin Liu Performance Center', cat: 'museum', lat: 42.65930, lng: -70.61860,
+    addr: '37 Main St, Rockport, MA', mins: 90, open: null, close: null,
+    tip: 'Concert hall with a wall of glass onto the harbor. Check the schedule, and add a show under Times.' },
+  { id: 'halibut-point', name: 'Halibut Point State Park', cat: 'outdoors', lat: 42.68700, lng: -70.63100,
+    addr: '4 Gott Ave, Rockport, MA', mins: 75, open: '08:00', close: null, daylight: true,
+    tip: 'A granite quarry pool and tide pools at the tip of Cape Ann. Parking is free Nov–Apr.' },
+  { id: 'paper-house', name: 'The Paper House', cat: 'museum', lat: 42.67295, lng: -70.634648,
+    addr: '52 Pigeon Hill St, Rockport, MA', mins: 25, open: '10:00', close: '17:00', oh: 'Apr-Oct Mo-Su 10:00-17:00; Nov-Mar off',
+    tip: 'A house built from 100,000 newspapers. Usually closes for the season at the end of October.' },
+  { id: 'front-beach', name: 'Front Beach', cat: 'outdoors', lat: 42.65630, lng: -70.61900,
+    addr: 'Beach St, Rockport, MA', mins: 30, open: null, close: null, daylight: true },
+  { id: 'andrews-point', name: 'Andrews Point', cat: 'outdoors', lat: 42.68360, lng: -70.61890,
+    addr: 'Point de Chene Ave, Rockport, MA', mins: 25, open: null, close: null, daylight: true,
+    tip: 'Rocky point with big ocean views. Watch for seals.' },
+  { id: 'roy-moore', name: 'Roy Moore Lobster Co.', cat: 'food', lat: 42.659688, lng: -70.615668,
+    addr: '29 Bearskin Neck, Rockport, MA', mins: 45, open: '11:00', close: '17:00',
+    tip: 'Lobster shack on Bearskin Neck. Seasonal hours, so check ahead.' },
+  { id: 'helmuts', name: "Helmut's Strudel", cat: 'food', lat: 42.660379, lng: -70.614681,
+    addr: '69 Bearskin Neck, Rockport, MA', mins: 20, open: '09:00', close: '17:00' },
+  { id: 'tucks', name: "Tuck's Candy", cat: 'food', lat: 42.658486, lng: -70.616494,
+    addr: '7 Dock Square, Rockport, MA', mins: 15, open: '10:00', close: '18:00',
+    tip: 'Saltwater taffy made on site since 1929.' },
+
+  // ---------------- Gloucester ----------------
+  { id: 'virgilios', name: 'Virgilio\u2019s Italian Bakery', cat: 'food', lat: 42.6117376, lng: -70.6654827,
+    addr: '29 Main St, Gloucester, MA', mins: 40, open: '08:30', close: '17:00', oh: 'Mo-Sa 08:30-17:00; Su off', phone: '978-283-5295',
+    tip: 'Gloucester\u2019s Italian bakery and deli, famous for its subs (try the St. Joseph). Counter service, so it\u2019s quick.' },
+  { id: 'cape-ann-whale-watch', name: 'Cape Ann Whale Watch', cat: 'tour', lat: 42.61570, lng: -70.65220,
+    addr: "415 Main St (Rose's Wharf), Gloucester, MA", mins: 240, open: null, close: null, tickets: true,
+    tip: 'About 4 hours out to Stellwagen Bank. Check in 30 minutes before your boat, and dress warmly.' },
+  { id: 'hammond-castle', name: 'Hammond Castle Museum', cat: 'museum', lat: 42.585128, lng: -70.692564,
+    addr: '80 Hesperus Ave, Gloucester, MA', mins: 90, open: '09:00', close: '15:30', tickets: true,
+    tip: 'A medieval-style castle on the cliffs. Last entry 2:45 PM. Book ahead if you’re arriving by car.' },
+  { id: 'fishermans-memorial', name: "Gloucester Fisherman's Memorial", cat: 'outdoors', lat: 42.610139, lng: -70.670361,
+    addr: 'Stacy Blvd, Gloucester, MA', mins: 15, open: null, close: null,
+    tip: 'The "Man at the Wheel" statue on the harbor.' },
+  { id: 'cape-ann-museum', name: 'Cape Ann Museum', cat: 'museum', lat: 42.614016, lng: -70.661621,
+    addr: '27 Pleasant St, Gloucester, MA', mins: 75, open: '10:00', close: '17:00', oh: 'Tu-Sa 09:45-17:00; Su 13:00-17:00; Mo off',
+    tip: 'Fitz Henry Lane paintings and Cape Ann history. Parts may be at CAM Green, 13 Poplar St, during renovations.' },
+  { id: 'eastern-point-light', name: 'Eastern Point Lighthouse', cat: 'outdoors', lat: 42.580167, lng: -70.66444,
+    addr: 'Eastern Point Blvd, Gloucester, MA', mins: 30, open: null, close: null, daylight: true,
+    tip: 'Walk the half-mile Dog Bar Breakwater out into the harbor.' },
+];
+
+// Lore: a story on one of the places above, or a place of its own.
+for (const l of LORE) {
+  if (l.place) {
+    const p = PLACES.find(x => x.id === l.place);
+    if (p) p.lore = l;
+    continue;
+  }
+  PLACES.push({
+    id: l.id, name: l.name, cat: 'lore', lat: l.lat, lng: l.lng, addr: l.addr, mins: l.mins || 10,
+    open: null, close: null, daylight: !!l.daylight, lore: l,
+  });
+}
+
+export const SALEM_CENTER = [42.5215, -70.8925];
+// Rough box around Salem, used for place search.
+export const SALEM_BOUNDS = [[42.495, -70.935], [42.545, -70.855]];
+
+// Towns a day can be based in. `bounds` is used for place search.
+export const TOWNS = {
+  rockport: { name: 'Rockport', center: [42.6583, -70.6168], bounds: [[42.57, -70.735], [42.70, -70.58]] },
+  salem: { name: 'Salem', center: SALEM_CENTER, bounds: SALEM_BOUNDS, parking: 'museum-place-garage' },
+  gloucester: { name: 'Gloucester', center: [42.6125, -70.6630], bounds: [[42.57, -70.735], [42.70, -70.58]] },
+};
