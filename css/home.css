@@ -371,6 +371,30 @@
 }
 
 
+/* Walkthrough videos */
+
+.project-media {
+    width: 100%;
+    margin: 0;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-media {
+    transform: translateY(-8px);
+}
+
+.project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--black);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+}
+
+
 /* =========================================================
    ABOUT PREVIEW
    ========================================================= */
