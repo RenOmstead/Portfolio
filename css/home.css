@@ -316,6 +316,7 @@
 /* Project visual areas */
 
 .project-visual {
+    flex: 1;
     min-height: 320px;
     display: flex;
     align-items: center;
@@ -331,43 +332,8 @@
     background: var(--berry);
 }
 
-.project-visual-seo {
+.project-visual-novellow {
     background: var(--pine-teal);
-}
-
-.project-visual-research {
-    background: var(--walnut);
-}
-
-
-/* Placeholder project screen */
-
-.project-screen {
-    width: 100%;
-    height: 100%;
-    min-height: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--off-white);
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.project-card:hover .project-screen {
-    transform: translateY(-8px);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.24);
-}
-
-.project-screen span {
-    color: var(--muted);
-    font-family: "Courier New", Courier, monospace;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
 }
 
 
@@ -783,10 +749,6 @@
 
     .project-visual {
         padding: 20px;
-    }
-
-    .project-screen {
-        min-height: 230px;
     }
 
     .process-grid {
