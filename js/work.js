@@ -34,4 +34,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+
+    // Only one walkthrough video plays at a time.
+    const videos = document.querySelectorAll(".work-video");
+
+    videos.forEach((video) => {
+
+        video.addEventListener("play", () => {
+
+            videos.forEach((other) => {
+                if (other !== video) {
+                    other.pause();
+                }
+            });
+
+        });
+
+    });
+
 });
